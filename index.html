@@ -5,5 +5,14 @@
     <title>Text To Speech</title>
   </head>
   <body>
+    <form class="form" action="http://localhost:6060/hear" method="" onsubmit="(e) => {e.preventDefault();}">
+      <label for="lang">Choose a language:</label>
+      <select name="lang" id="lang">
+      </select>
+
+      <textarea name="text" rows="8" cols="80"></textarea>
+      <input type="submit" name="" value="SUBMIT">
+    </form>
+    </script>
   </body>
 </html>
