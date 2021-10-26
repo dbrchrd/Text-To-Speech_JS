@@ -10,10 +10,12 @@ app.get('/hear', function (req, res) {
       try {
         const gtts = new gTTS(req.query.text, req.query.lang);
       	console.log("Your file is processed !");
-      	res.header('Content-Disposition', `attachment; filename="$a{req.query.text} · [${req.query.lang}].mp3"`);
-      	console.log("Your file is OK to download !");
-      	gtts.stream().pipe(res);
-      	console.log("Downloading...");
+        try {
+        	res.header('Content-Disposition', `attachment; filename="$a{req.query.text} · [${req.query.lang}].mp3"`);
+        	console.log("Your file is OK to download !");
+        } catch (err) {
+          console.error(err);
+        }
       } catch (err) {
       	console.error(err);
       }
