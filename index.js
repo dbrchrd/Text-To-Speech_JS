@@ -13,6 +13,12 @@ app.get('/hear', function (req, res) {
         try {
         	res.header('Content-Disposition', `attachment; filename="$a{req.query.text} · [${req.query.lang}].mp3"`);
         	console.log("Your file is OK to download !");
+          try {
+          	gtts.stream().pipe(res);
+          	console.log("Downloading...");
+          } catch (err) {
+            console.error(err);
+          }
         } catch (err) {
           console.error(err);
         }
