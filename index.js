@@ -11,7 +11,7 @@ app.get('/hear', function (req, res) {
         const gtts = new gTTS(req.query.text, req.query.lang);
       	console.log("Your file is processed !");
         try {
-        	res.header('Content-Disposition', `attachment; filename="$a{req.query.text} · [${req.query.lang}].mp3"`);
+        	res.header('Content-Disposition', `attachment; filename="${req.query.text} · [${req.query.lang}].mp3"`);
         	console.log("Your file is OK to download !");
           try {
           	gtts.stream().pipe(res);
