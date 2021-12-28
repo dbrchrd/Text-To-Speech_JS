@@ -66,10 +66,17 @@
       [ "vi", "Vietnamese" ],
       [ "cy", "Welsh" ]
     ]
+    let browser_language = navigator.languages;
     languages.forEach((item, i) => {
       let opt = document.createElement("option");
       opt.value = item[0]; opt.innerHTML = item[1];
       document.querySelector("#lang").add(opt, null);
+      browser_language.forEach((atem, a) => {
+        if (atem.includes(item[0])) {
+          opt.selected = true;
+        }
+      });
     });
+    // console.log(navigator.languages);
   </script>
 </html>
