@@ -66,5 +66,10 @@
       [ "vi", "Vietnamese" ],
       [ "cy", "Welsh" ]
     ]
+    languages.forEach((item, i) => {
+      let opt = document.createElement("option");
+      opt.value = item[0]; opt.innerHTML = item[1];
+      document.querySelector("#lang").add(opt, null);
+    });
   </script>
 </html>
