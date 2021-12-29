@@ -9,5 +9,11 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dbrchrd/Text-To-Speech_JS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dbrchrd/Text-To-Speech_JS/issues"
   }
 }
