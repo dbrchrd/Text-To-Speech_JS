@@ -15,5 +15,10 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/dbrchrd/Text-To-Speech_JS/issues"
+  },
+  "homepage": "https://github.com/dbrchrd/Text-To-Speech_JS#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "gtts": "^0.2.1"
   }
 }
