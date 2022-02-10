@@ -20,5 +20,8 @@
   "dependencies": {
     "express": "^4.17.2",
     "gtts": "^0.2.1"
+  },
+  "devDependencies": {
+    "@architect/sandbox": "^4.5.2"
   }
 }
