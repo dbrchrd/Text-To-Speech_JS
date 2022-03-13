@@ -1,82 +1,87 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Text To Speech</title>
-  </head>
-  <body>
-    <form class="form" action="http://localhost:6060/hear" method="GET" onsubmit="(e) => {e.preventDefault();}">
-      <label for="lang">Choose a language:</label>
-      <select name="lang" id="lang"></select>
-      <textarea name="text" rows="8"></textarea>
-      <input type="submit" name="submit" value="SUBMIT">
-    </form>
-  </body>
-  <script type="text/javascript">
-    const languages = [
-      [ "af", "Afrikaans" ],
-      [ "sq", "Albanian" ],
-      [ "ar", "Arabic" ],
-      [ "hy", "Armenian" ],
-      [ "ca", "Catalan" ],
-      [ "zh", "Chinese" ],
-      [ "zh-cn", "Chinese (Mandarin/China)" ],
-      [ "zh-tw", "Chinese (Mandarin/Taiwan)" ],
-      [ "zh-yue", "Chinese (Cantonese)" ],
-      [ "hr", "Croatian" ],
-      [ "cs", "Czech" ],
-      [ "da", "Danish" ],
-      [ "nl", "Dutch" ],
-      [ "en", "English" ],
-      [ "en-au", "English (Australia)" ],
-      [ "en-uk", "English (United Kingdom)" ],
-      [ "en-us", "English (United States)" ],
-      [ "eo", "Esperanto" ],
-      [ "fi", "Finnish" ],
-      [ "fr", "French" ],
-      [ "de", "German" ],
-      [ "el", "Greek" ],
-      [ "ht", "Haitian Creole" ],
-      [ "hi", "Hindi" ],
-      [ "hu", "Hungarian" ],
-      [ "is", "Icelandic" ],
-      [ "id", "Indonesian" ],
-      [ "it", "Italian" ],
-      [ "ja", "Japanese" ],
-      [ "ko", "Korean" ],
-      [ "la", "Latin" ],
-      [ "lv", "Latvian" ],
-      [ "mk", "Macedonian" ],
-      [ "no", "Norwegian" ],
-      [ "pl", "Polish" ],
-      [ "pt", "Portuguese" ],
-      [ "pt-br", "Portuguese (Brazil)" ],
-      [ "ro", "Romanian" ],
-      [ "ru", "Russian" ],
-      [ "sr", "Serbian" ],
-      [ "sk", "Slovak" ],
-      [ "es", "Spanish" ],
-      [ "es-es", "Spanish (Spain)" ],
-      [ "es-us", "Spanish (United States)" ],
-      [ "sw", "Swahili" ],
-      [ "sv", "Swedish" ],
-      [ "ta", "Tamil" ],
-      [ "th", "Thai" ],
-      [ "tr", "Turkish" ],
-      [ "vi", "Vietnamese" ],
-      [ "cy", "Welsh" ]
-    ]
-    let browser_language = navigator.languages;
-    languages.forEach((item, i) => {
-      let opt = document.createElement("option");
-      opt.value = item[0]; opt.innerHTML = item[1];
-      document.querySelector("#lang").add(opt, null);
-      browser_language.forEach((atem, a) => {
-        if (atem.includes(item[0])) {
-          opt.selected = true;
-        }
-      });
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <title>Text To Speech</title>
+</head>
+
+<body>
+  <form class="form" action="http://localhost:6060/hear" method="GET" onsubmit="(e) => {e.preventDefault();}">
+    <label for="lang">Choose a language:</label>
+    <select name="lang" id="lang"></select>
+    <textarea name="text" rows="8"></textarea>
+    <input type="submit" name="submit" value="SUBMIT">
+  </form>
+</body>
+
+<script type="text/javascript">
+  const languages = [
+    ["af", "Afrikaans"],
+    ["sq", "Albanian"],
+    ["ar", "Arabic"],
+    ["hy", "Armenian"],
+    ["ca", "Catalan"],
+    ["zh", "Chinese"],
+    ["zh-cn", "Chinese (Mandarin/China)"],
+    ["zh-tw", "Chinese (Mandarin/Taiwan)"],
+    ["zh-yue", "Chinese (Cantonese)"],
+    ["hr", "Croatian"],
+    ["cs", "Czech"],
+    ["da", "Danish"],
+    ["nl", "Dutch"],
+    ["en", "English"],
+    ["en-au", "English (Australia)"],
+    ["en-uk", "English (United Kingdom)"],
+    ["en-us", "English (United States)"],
+    ["eo", "Esperanto"],
+    ["fi", "Finnish"],
+    ["fr", "French"],
+    ["de", "German"],
+    ["el", "Greek"],
+    ["ht", "Haitian Creole"],
+    ["hi", "Hindi"],
+    ["hu", "Hungarian"],
+    ["is", "Icelandic"],
+    ["id", "Indonesian"],
+    ["it", "Italian"],
+    ["ja", "Japanese"],
+    ["ko", "Korean"],
+    ["la", "Latin"],
+    ["lv", "Latvian"],
+    ["mk", "Macedonian"],
+    ["no", "Norwegian"],
+    ["pl", "Polish"],
+    ["pt", "Portuguese"],
+    ["pt-br", "Portuguese (Brazil)"],
+    ["ro", "Romanian"],
+    ["ru", "Russian"],
+    ["sr", "Serbian"],
+    ["sk", "Slovak"],
+    ["es", "Spanish"],
+    ["es-es", "Spanish (Spain)"],
+    ["es-us", "Spanish (United States)"],
+    ["sw", "Swahili"],
+    ["sv", "Swedish"],
+    ["ta", "Tamil"],
+    ["th", "Thai"],
+    ["tr", "Turkish"],
+    ["vi", "Vietnamese"],
+    ["cy", "Welsh"]
+  ]
+  let browser_language = navigator.languages;
+  languages.forEach((item, i) => {
+    let opt = document.createElement("option");
+    opt.value = item[0]; opt.innerHTML = item[1];
+    document.querySelector("#lang").add(opt, null);
+    browser_language.forEach((atem, a) => {
+      if (atem.includes(item[0])) {
+        opt.selected = true;
+      }
     });
+  });
     // console.log(navigator.languages);
-  </script>
+</script>
+
 </html>
