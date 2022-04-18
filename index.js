@@ -1,8 +1,10 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const gTTS = require("gtts");
-const PORT = 6060;
-const HOST = "127.0.0.1";
+
+const HOST = process.env.HOST || "127.0.0.1";
+const PORT = process.env.PORT || 6060;
 
 app.get("/hear", function (req, res) {
   if (req.query.text !== "" && req.query.lang !== "") {
