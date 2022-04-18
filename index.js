@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const gTTS = require("gtts");
 const PORT = 6060;
+const HOST = "127.0.0.1";
 
 app.get("/hear", function (req, res) {
   if (req.query.text !== "" && req.query.lang !== "") {
@@ -37,8 +38,8 @@ app.get("/hear", function (req, res) {
   }
 });
 
-app.listen(PORT, function () {
+app.listen(PORT, HOST, function () {
   console.log(
-    `Open url to hear Baguette http://localhost:${PORT}/hear?lang=fr&text=Baguette`
+    `Open url to hear Baguette http://${HOST}:${PORT}/hear?lang=fr&text=Baguette`
   );
 });
