@@ -1,21 +1,24 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const gTTS = require('gtts');
+const gTTS = require("gtts");
 const PORT = 6060;
 
-app.get('/hear', function (req, res) {
+app.get("/hear", function (req, res) {
   if (req.query.text !== "" && req.query.lang !== "") {
     try {
       console.log("I understand, wait a few moments, file being processed !");
       try {
         const gtts = new gTTS(req.query.text, req.query.lang);
-      	console.log("Your file is processed !");
+        console.log("Your file is processed !");
         try {
-        	res.header('Content-Disposition', `attachment; filename="${req.query.text} · [${req.query.lang}].mp3"`);
-        	console.log("Your file is OK to download !");
+          res.header(
+            "Content-Disposition",
+            `attachment; filename="${req.query.text} · [${req.query.lang}].mp3"`
+          );
+          console.log("Your file is OK to download !");
           try {
-          	gtts.stream().pipe(res);
-          	console.log("Downloading...");
+            gtts.stream().pipe(res);
+            console.log("Downloading...");
           } catch (err) {
             console.error(err);
           }
@@ -23,11 +26,11 @@ app.get('/hear', function (req, res) {
           console.error(err);
         }
       } catch (err) {
-      	console.error(err);
+        console.error(err);
       }
     } catch (e) {
       console.log("err ", e);
-      res.status(404)
+      res.status(404);
     }
   } else {
     console.log("errr: lang or text is not valid");
@@ -35,5 +38,7 @@ app.get('/hear', function (req, res) {
 });
 
 app.listen(PORT, function () {
-  console.log(`Open url to hear Baguette http://localhost:${PORT}/hear?lang=fr&text=Baguette`);
+  console.log(
+    `Open url to hear Baguette http://localhost:${PORT}/hear?lang=fr&text=Baguette`
+  );
 });
