@@ -39,11 +39,13 @@ app.get("/hear", function (req, res) {
     console.log("errr: lang or text is not valid");
   }
 });
+
 app.get("/", function (req, res) {
   res.sendFile(__dirname + "/" + "index.html");
 });
+
 app.listen(PORT, HOST, function () {
   console.log(
-    `Open url to hear Baguette http://${HOST}:${PORT}/hear?lang=fr&text=Baguette`
+    `Open this url to hear Baguette in french http://${HOST}:${PORT}/hear?lang=fr&text=Baguette`
   );
 });
