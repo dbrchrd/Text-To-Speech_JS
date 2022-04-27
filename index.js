@@ -32,11 +32,11 @@ app.get("/hear", (req, res) => {
         console.error("error: ", err);
       }
     } catch (err) {
-      console.log("error: ", err);
+      console.error("error: ", err);
       res.status(404);
     }
   } else {
-    console.log("error: lang or text is not valid");
+    console.error("error: lang or text is not valid");
   }
 });
 
