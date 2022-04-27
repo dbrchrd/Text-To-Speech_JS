@@ -23,20 +23,20 @@ app.get("/hear", (req, res) => {
             gtts.stream().pipe(res);
             console.log("Downloading...");
           } catch (err) {
-            console.error(err);
+            console.error("error: ", err);
           }
         } catch (err) {
-          console.error(err);
+          console.error("error: ", err);
         }
       } catch (err) {
-        console.error(err);
+        console.error("error: ", err);
       }
-    } catch (e) {
-      console.log("err ", e);
+    } catch (err) {
+      console.log("error: ", err);
       res.status(404);
     }
   } else {
-    console.log("errr: lang or text is not valid");
+    console.log("error: lang or text is not valid");
   }
 });
 
