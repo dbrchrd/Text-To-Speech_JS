@@ -6,7 +6,7 @@ const gTTS = require("gtts");
 const HOST = process.env.HOST || "127.0.0.1";
 const PORT = process.env.PORT || 6060;
 
-app.get("/hear", function (req, res) {
+app.get("/hear", (req, res) => {
   if (req.query.text !== "" && req.query.lang !== "") {
     try {
       console.log("I understand, wait a few moments, file being processed !");
@@ -40,11 +40,11 @@ app.get("/hear", function (req, res) {
   }
 });
 
-app.get("/", function (req, res) {
+app.get("/", (req, res) => {
   res.sendFile(__dirname + "/" + "index.html");
 });
 
-app.listen(PORT, HOST, function () {
+app.listen(PORT, HOST, () => {
   console.log(
     `Open this url to hear Baguette in french http://${HOST}:${PORT}/hear?lang=fr&text=Baguette`
   );
