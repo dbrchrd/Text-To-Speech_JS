@@ -9,8 +9,10 @@
 
 <body>
   <form class="form" action="/hear" method="GET" onsubmit="(e) => {e.preventDefault();}">
-    <label for="lang">Language:</label>
-    <select name="lang" id="lang"></select>
+    <div class="language">
+      <label for="lang">Language:</label>
+      <select name="lang" id="lang"></select>
+    </div>
     <textarea name="text" rows="8"></textarea>
     <input type="submit" value="SUBMIT">
   </form>
