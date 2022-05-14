@@ -6,6 +6,8 @@ const gTTS = require("gtts");
 const HOST = process.env.HOST || "127.0.0.1";
 const PORT = process.env.PORT || 6060;
 
+app.use(express.static("public"));
+
 app.get("/hear", (req, res) => {
   if (req.query.text !== "" && req.query.lang !== "") {
     try {
@@ -38,10 +40,6 @@ app.get("/hear", (req, res) => {
   } else {
     console.error("error: lang or text is not valid");
   }
-});
-
-app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/" + "index.html");
 });
 
 app.listen(PORT, HOST, () => {
