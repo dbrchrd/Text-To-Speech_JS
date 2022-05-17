@@ -3,7 +3,15 @@
   padding: 0;
 }
 
+body {
+  background-color: #1E1F1C;
+}
+
 .form {
   display: flex;
   flex-direction: column;
+}
+
+label {
+  color: #FFF;
 }
