@@ -15,3 +15,10 @@ body {
 label {
   color: #FFF;
 }
+
+textarea {
+  background-color: #FFF1;
+  color: #FFF;
+  outline: none;
+  resize: vertical;
+}
