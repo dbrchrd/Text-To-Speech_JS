@@ -1,9 +1,9 @@
-require("dotenv").config();
 const express = require("express");
 const app = express();
 const gTTS = require("gtts");
 
-const HOST = process.env.HOST || "127.0.0.1";
+// const HOST = process.env.HOST || "127.0.0.1"; // Dev
+const HOST = "0.0.0.0" || process.env.HOST; // Prod
 const PORT = process.env.PORT || 6060;
 
 app.use(express.static("public"));
